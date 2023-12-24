@@ -62,10 +62,19 @@ export default function App() {
       </NavBar>
 
       <Main>
+        {/*Passing elements as PROPS (ALTERNATIVE TO CHILDREN) */}
+        {/* <Box element={<MovieList movies={movies} />} />
+        <Box
+          element={
+            <>
+              <WatchedSummary watched={watched} />
+              <WatchedMovieList watched={watched} />
+            </>
+          }
+        /> */}
         <Box>
           <MovieList movies={movies} />
         </Box>
-
         <Box>
           <WatchedSummary watched={watched} />
           <WatchedMovieList watched={watched} />
