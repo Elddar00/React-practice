@@ -36,7 +36,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      location: "lisabon",
+      location: "novi pazar",
       isLoading: false,
       displayLocation: "",
       weather: {},
@@ -92,9 +92,44 @@ class App extends React.Component {
         <button onClick={this.fetchWeather}>Get weather</button>
 
         {this.state.isLoading && <p className="loader">Loading...</p>}
+
+        {this.state.weather.weathercode && (
+          <Weather
+            weather={this.state.weather}
+            location={this.state.displayLocation}
+          />
+        )}
       </div>
     );
   }
 }
 
 export default App;
+
+class Weather extends React.Component {
+  render() {
+    const {
+      temperature_2m_max: max,
+      temperature_2m_min: min,
+      time: dates,
+      weathercode: codes,
+    } = this.props.weather;
+
+    return (
+      <div>
+        <h2>Weather {this.props.location}</h2>
+        <ul className="weather">
+          {dates.map((date) => (
+            <Day />
+          ))}
+        </ul>
+      </div>
+    );
+  }
+}
+
+class Day extends React.Component {
+  render() {
+    return <li>Day</li>;
+  }
+}
