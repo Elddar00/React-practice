@@ -1,14 +1,17 @@
-import PropTypes from "prop-types";
+import { useContext } from "react";
+import { CitiesContext } from "../contexts/CitiesContext";
 import Spinner from "./Spinner";
 import styles from "./CityList.module.css";
 import CityItem from "./CityItem";
 import Message from "./Message";
 
-function CityList({ cities, isLoading }) {
+function CityList() {
+  const { cities, isLoading } = useContext(CitiesContext); // Pristup vrednostima iz konteksta
+
   if (isLoading) return <Spinner />;
 
   if (!cities.length)
-    return <Message message="Add your first city clicking by map" />;
+    return <Message message="Add your first city by clicking on the map" />;
   return (
     <ul className={styles.cityList}>
       {cities.map((city) => (
@@ -17,10 +20,5 @@ function CityList({ cities, isLoading }) {
     </ul>
   );
 }
-
-CityList.propTypes = {
-  cities: PropTypes.array.isRequired,
-  isLoading: PropTypes.bool.isRequired,
-};
 
 export default CityList;
