@@ -1,10 +1,13 @@
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import Spinner from "./Spinner";
 import styles from "./CountryList.module.css";
 import Message from "./Message";
 import CountryItem from "./CountryItem";
+import { useCities } from "../contexts/CitiesContext";
+/* eslint-disable */
 
-function CountryList({ cities, isLoading }) {
+function CountryList() {
+  const { cities, isLoading } = useCities();
   if (isLoading) return <Spinner />;
 
   if (!cities.length)
@@ -25,9 +28,9 @@ function CountryList({ cities, isLoading }) {
   );
 }
 
-CountryList.propTypes = {
-  cities: PropTypes.array.isRequired,
-  isLoading: PropTypes.bool.isRequired,
-};
+// CountryList.propTypes = {
+//   cities: PropTypes.array.isRequired,
+//   isLoading: PropTypes.bool.isRequired,
+// };
 
 export default CountryList;

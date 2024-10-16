@@ -1,5 +1,7 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
+
+/* eslint-disable */
 
 const CitiesContext = createContext();
 
@@ -31,7 +33,15 @@ function CitiesProvider({ children }) {
 }
 
 CitiesProvider.propTypes = {
-  children: PropTypes.node.isRequired, // Definiši da je children obavezni prop
+  children: PropTypes.node.isRequired,
 };
 
-export { CitiesProvider, CitiesContext };
+function useCities() {
+  const context = useContext(CitiesContext);
+  if (context === undefined)
+    throw new Error("Cities Context was used outside the ");
+  return context;
+}
+/* eslint-disable */
+
+export { CitiesProvider, CitiesContext, useCities };

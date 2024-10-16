@@ -1,12 +1,11 @@
-import { useContext } from "react";
-import { CitiesContext } from "../contexts/CitiesContext";
+import { useCities } from "../contexts/CitiesContext";
 import Spinner from "./Spinner";
 import styles from "./CityList.module.css";
 import CityItem from "./CityItem";
 import Message from "./Message";
 
 function CityList() {
-  const { cities, isLoading } = useContext(CitiesContext); // Pristup vrednostima iz konteksta
+  const { cities, isLoading } = useCities(); // Pristup vrednostima iz konteksta
 
   if (isLoading) return <Spinner />;
 
