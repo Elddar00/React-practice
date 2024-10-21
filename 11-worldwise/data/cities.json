@@ -35,42 +35,6 @@
         "lng": 13.376933665713324
       },
       "id": 98443197
-    },
-    {
-      "cityName": "Terrassa",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2024-10-20T17:17:46.693Z",
-      "notes": "adasdadada",
-      "position": {
-        "lat": "41.57025176609894",
-        "lng": "2.0324707031250004"
-      },
-      "id": 98443198
-    },
-    {
-      "cityName": "Pedralba",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2024-10-20T17:21:38.922Z",
-      "notes": "asdasdaa",
-      "position": {
-        "lat": "39.57182223734374",
-        "lng": "-0.7250976562500001"
-      },
-      "id": 98443199
-    },
-    {
-      "cityName": "Sierra de Luna",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2024-10-20T17:27:26.396Z",
-      "notes": "asdasdadadadad",
-      "position": {
-        "lat": "42.04929263868686",
-        "lng": "-0.9228515625000001"
-      },
-      "id": 98443200
     }
   ]
 }
