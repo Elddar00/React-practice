@@ -3,13 +3,11 @@ import Product from "./pages/Product";
 import Pricing from "./pages/Pricing";
 import Homepage from "./pages/Homepage";
 import AppLayout from "./pages/AppLayout";
-
 import PageNotFound from "./pages/PageNotFound";
 import Login from "./pages/Login";
 import CityList from "./components/CityList";
 import City from "./components/City";
 import Form from "./components/Form";
-
 import CountryList from "./components/CountryList";
 import { CitiesProvider } from "./contexts/CitiesContext";
 
