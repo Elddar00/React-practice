@@ -13,14 +13,19 @@ import { createRoot } from "react-dom/client";
 // console.log(reactElement);
 // root.render(reactElement);
 
-const root = createRoot(document.getElementById("root"));
+// const root = createRoot(document.getElementById("root"));
 
-function MainContent() {
-  return <h1>Hello React, React is awesome</h1>;
-}
+// function MainContent() {
+//   return <h1>Hello React, React is awesome</h1>;
+// }
 
-root.render(
-  <div>
-    <MainContent />
-  </div>
-);
+// root.render(
+//   <div>
+//     <MainContent />
+//   </div>
+// );
+
+const h1 = document.createElement("h1");
+h1.textContent = "This is imperative coding";
+h1.className = "header";
+document.getElementById("root").appendChild(h1);
