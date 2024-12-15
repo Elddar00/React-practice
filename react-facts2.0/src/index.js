@@ -1,5 +1,6 @@
 import { createRoot } from "react-dom/client";
 import { createElement } from "react";
+import "./App.css";
 
 // createRoot(document.getElementById("root")).render(
 //   <ul>
@@ -31,10 +32,26 @@ import { createElement } from "react";
 // h1.className = "header";
 // document.getElementById("root").appendChild(h1);
 
+// const root = createRoot(document.getElementById("root"));
+// root.render(
+//   <main>
+//     <img src="logo512.png" alt="" />
+//     <h1>This is another element</h1>
+//   </main>
+// );
+
 const root = createRoot(document.getElementById("root"));
+
 root.render(
   <main>
-    <img src="logo512.png" alt="" />
-    <h1>This is another element</h1>
+    <img src="logo512.png" width="40px" alt="React logo" />
+    <h1>Fun facts about React</h1>
+    <ul>
+      <li>Was first realase in 2013</li>
+      <li>Was originally created bt Jordan Walke</li>
+      <li>He well over 200K stars on GitHub</li>
+      <li>It maintained by Meta</li>
+      <li>Powers thousands of enterprise apps, including mobile apps</li>
+    </ul>
   </main>
 );
