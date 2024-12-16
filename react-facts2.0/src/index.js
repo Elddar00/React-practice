@@ -40,18 +40,38 @@ import "./App.css";
 //   </main>
 // );
 
+// const root = createRoot(document.getElementById("root"));
+
+// root.render(<TemporaryName />);
+
+// function TemporaryName() {
+//   return (
+//     <main>
+//       <img src="logo512.png" width="40px" alt="React logo" />
+//       <h1>Fun facts about React</h1>
+//       <ul>
+//         <li>Was first realase in 2013</li>
+//         <li>Was originally created bt Jordan Walke</li>
+//         <li>He well over 200K stars on GitHub</li>
+//         <li>It maintained by Meta</li>
+//         <li>Powers thousands of enterprise apps, including mobile apps</li>
+//       </ul>
+//     </main>
+//   );
+// }
+
 const root = createRoot(document.getElementById("root"));
 
-root.render(
-  <main>
-    <img src="logo512.png" width="40px" alt="React logo" />
-    <h1>Fun facts about React</h1>
-    <ul>
-      <li>Was first realase in 2013</li>
-      <li>Was originally created bt Jordan Walke</li>
-      <li>He well over 200K stars on GitHub</li>
-      <li>It maintained by Meta</li>
-      <li>Powers thousands of enterprise apps, including mobile apps</li>
-    </ul>
-  </main>
-);
+function Test() {
+  return (
+    <ol>
+      <li>React is great !</li>
+      <li>Test 1</li>
+      <li>Test 2</li>
+      <li>Test 3</li>
+      <li>Test 4</li>
+    </ol>
+  );
+}
+
+root.render(<Test />);
