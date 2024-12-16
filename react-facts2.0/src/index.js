@@ -64,13 +64,24 @@ const root = createRoot(document.getElementById("root"));
 
 function Test() {
   return (
-    <ol>
-      <li>React is great !</li>
-      <li>Test 1</li>
-      <li>Test 2</li>
-      <li>Test 3</li>
-      <li>Test 4</li>
-    </ol>
+    <div>
+      <header>
+        <img src="logo512.png" width="40px" alt="React logo" />
+      </header>
+      <main>
+        <h1>I am exited to learn Reactcttcttc</h1>
+        <ol>
+          <li>React is great !</li>
+          <li>Test 1</li>
+          <li>Test 2</li>
+          <li>Test 3</li>
+          <li>Test 4</li>
+        </ol>
+      </main>
+      <footer>
+        <small>@ 2024 CC development. All rights reserved</small>
+      </footer>
+    </div>
   );
 }
 
