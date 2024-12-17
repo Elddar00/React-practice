@@ -1,5 +1,6 @@
 import { createRoot } from "react-dom/client";
 import { createElement } from "react";
+
 import "./App.css";
 
 // createRoot(document.getElementById("root")).render(
@@ -64,7 +65,7 @@ const root = createRoot(document.getElementById("root"));
 
 function Test() {
   return (
-    <div>
+    <>
       <header>
         <img src="logo512.png" width="40px" alt="React logo" />
       </header>
@@ -81,7 +82,7 @@ function Test() {
       <footer>
         <small>@ 2024 CC development. All rights reserved</small>
       </footer>
-    </div>
+    </>
   );
 }
 
