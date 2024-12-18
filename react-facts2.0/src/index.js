@@ -1,6 +1,8 @@
 import { createRoot } from "react-dom/client";
 import { createElement } from "react";
-
+import Header from "./Header";
+import MainContent from "./MainContent";
+import Footer from "./Footer";
 import "./App.css";
 
 // createRoot(document.getElementById("root")).render(
@@ -62,44 +64,6 @@ import "./App.css";
 // }
 
 const root = createRoot(document.getElementById("root"));
-
-function Header() {
-  return (
-    <header className="header">
-      <img src="logo512.png" className="nav-logo" alt="React logo" />
-      <nav>
-        <ul className="nav-list">
-          <li className="nav-list-item">Pricing</li>
-          <li className="nav-list-item">About</li>
-          <li className="nav-list-item">Contact</li>
-        </ul>
-      </nav>
-    </header>
-  );
-}
-
-function MainContent() {
-  return (
-    <main>
-      <h1>I am exited to learn Reactcttcttc</h1>
-      <ol>
-        <li>React is great !</li>
-        <li>Test 1</li>
-        <li>Test 2</li>
-        <li>Test 3</li>
-        <li>Test 4</li>
-      </ol>
-    </main>
-  );
-}
-
-function Footer() {
-  return (
-    <footer>
-      <small>@ 2024 CC development. All rights reserved</small>
-    </footer>
-  );
-}
 
 function Test() {
   return (
