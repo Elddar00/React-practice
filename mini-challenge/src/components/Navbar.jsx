@@ -1,3 +1,12 @@
+import "../App.css";
+
 export default function Navbar() {
-  return <div>Navbar components herere</div>;
+  return (
+    <header>
+      <nav>
+        <img src="/logo512.png" alt="React logo" />
+        <span>ReactFacts</span>
+      </nav>
+    </header>
+  );
 }
