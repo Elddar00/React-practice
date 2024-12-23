@@ -33,7 +33,7 @@ nav > span {
 
 main {
   padding: 60px 30px;
-  background-image: url(../public/logo512.png);
+  /* background-image: url(../public/logo512.png); */
   background-repeat: no-repeat;
   background-position: right 500%;
 }
