@@ -3,6 +3,10 @@ body {
   margin: 0;
 }
 
+.container {
+  margin: 45px 40px;
+}
+
 header {
   background: #f55a5a;
   display: flex;
@@ -25,7 +29,6 @@ header > h1 {
 
 article.journal-entry {
   display: flex;
-  margin-bottom: 36px;
 }
 
 article.journal-entry .marker {
