@@ -22,3 +22,7 @@ header > h1 {
   font-weight: 500;
   font-family: Inter;
 }
+
+article.journal-entry {
+  display: flex;
+}
