@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function Main() {
   const ingredients = ["Chicken", "Oregano", "Tomatoes"];
 
@@ -14,6 +16,9 @@ export default function Main() {
     console.log(ingredients);
   }
 
+  const [isImportant, func] = React.useState("Yes");
+  console.log(isImportant);
+
   return (
     <main>
       <form className="add-ingredient-form" onSubmit={handleSubmit}>
@@ -26,6 +31,7 @@ export default function Main() {
         <button>Add ingredient</button>
       </form>
       <ul>{ingredientsListItems}</ul>
+      <button className="value">{isImportant}</button>
     </main>
   );
 }
