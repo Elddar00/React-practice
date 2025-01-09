@@ -4,11 +4,16 @@ export default function App2() {
   const [count, setCount] = React.useState(0);
 
   function subtract() {
-    if (count > 0) setCount(count - 1);
+    setCount((prevCount) => {
+      if (prevCount > 0) {
+        return prevCount - 1;
+      }
+      return prevCount;
+    });
   }
 
   function add() {
-    setCount(count + 1);
+    setCount((prevCount) => prevCount + 1);
   }
 
   return (
