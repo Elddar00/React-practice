@@ -16,8 +16,11 @@ export default function Main() {
     console.log(ingredients);
   }
 
-  const [isImportant, func] = React.useState("Yes");
-  console.log(isImportant);
+  const [isImportant, setIsImportant] = React.useState("Yes");
+
+  function handleClick() {
+    setIsImportant("Definitely");
+  }
 
   return (
     <main>
@@ -31,7 +34,9 @@ export default function Main() {
         <button>Add ingredient</button>
       </form>
       <ul>{ingredientsListItems}</ul>
-      <button className="value">{isImportant}</button>
+      <button className="value" onClick={handleClick}>
+        {isImportant}
+      </button>
     </main>
   );
 }
