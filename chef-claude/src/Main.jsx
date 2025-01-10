@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Main() {
-  const ingredients = ["Chicken", "Oregano", "Tomatoes"];
+  const [ingredients, setIngredients] = React.useState([]);
 
   const ingredientsListItems = ingredients.map((ingredient) => (
     <li key={ingredient}>{ingredient}</li>
@@ -9,17 +9,10 @@ export default function Main() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("Form submitted!");
+
     const formData = new FormData(e.currentTarget);
-    const newIngredients = formData.get("ingredient");
-    ingredients.push(newIngredients);
-    console.log(ingredients);
-  }
-
-  const [isImportant, setIsImportant] = React.useState("Yes");
-
-  function handleClick() {
-    setIsImportant("Definitely");
+    const newIngredient = formData.get("ingredient");
+    setIngredients((prevIngredients) => [...prevIngredients, newIngredient]);
   }
 
   return (
@@ -34,9 +27,6 @@ export default function Main() {
         <button>Add ingredient</button>
       </form>
       <ul>{ingredientsListItems}</ul>
-      <button className="value" onClick={handleClick}>
-        {isImportant}
-      </button>
     </main>
   );
 }
