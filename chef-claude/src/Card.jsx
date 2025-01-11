@@ -11,13 +11,18 @@ export default function Card() {
     lastName: "Doe",
     phone: "+1 (212) 555-1212",
     email: "itsmyrealname@example.com",
-    isFavorite: true,
+    isFavorite: false,
   });
 
   let starIcon = contact.isFavorite ? starFilled : starEmpty;
 
   function toggleFavorite() {
-    console.log("Toggle Favorite");
+    setContact((prevContact) => {
+      return {
+        ...prevContact,
+        isFavorite: !prevContact.isFavorite,
+      };
+    });
   }
 
   return (
