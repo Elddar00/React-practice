@@ -5,6 +5,8 @@ import App2 from "./App2";
 import App3 from "./App3";
 import App4 from "./App4";
 import Card from "./Card";
+import Practice from "./Practice";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -12,6 +14,7 @@ root.render(
     {/* <App2 /> */}
     {/* <App3 /> */}
     {/* <App4 /> */}
-    <Card />
+    {/* <Card /> */}
+    <Practice />
   </React.StrictMode>
 );
