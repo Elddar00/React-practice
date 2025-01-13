@@ -27,7 +27,10 @@ export default function Practice() {
         <br />
         <label htmlFor="password">Password</label>
         <input type="password" name="password" />
+
         <br />
+        <label htmlFor="description">Description:</label>
+        <textarea id="description" name="description"></textarea>
 
         <button>Submit</button>
       </form>

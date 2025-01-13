@@ -10,11 +10,11 @@ import Practice from "./Practice";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
     {/* <App2 /> */}
     {/* <App3 /> */}
     {/* <App4 /> */}
     {/* <Card /> */}
-    {/* <Practice /> */}
+    <Practice />
   </React.StrictMode>
 );
