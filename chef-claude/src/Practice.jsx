@@ -11,8 +11,10 @@ export default function Practice() {
     const email = formData.get("email");
     const password = formData.get("password");
     const employmentStatus = formData.get("employmentStatus");
+    const dietaryRestrictions = formData.getAll("dietaryRestrictions");
+
     // console.log(email, password);
-    console.log(employmentStatus);
+    console.log(dietaryRestrictions);
   }
 
   return (
@@ -54,6 +56,29 @@ export default function Practice() {
               value="full-time"
             />
             Full-time
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Dietery restrictions:</legend>
+          <label htmlFor="description">
+            <input type="checkbox" name="dietaryRestrictions" value="kosher" />
+            Kosher
+          </label>
+
+          <label htmlFor="">
+            <input type="checkbox" name="dietaryRestrictions" value="vegan" />
+            Vegan
+          </label>
+
+          <label htmlFor="">
+            <input
+              type="checkbox"
+              name="dietaryRestrictions"
+              defaultChecked={true}
+              value="gluten-free"
+            />
+            Gluten-free
           </label>
         </fieldset>
 
