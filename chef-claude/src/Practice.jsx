@@ -8,15 +8,17 @@ import "./practice.css";
 
 export default function Practice() {
   function signUp(formData) {
-    const email = formData.get("email");
-    const password = formData.get("password");
-    const employmentStatus = formData.get("employmentStatus");
+    const data = Object.fromEntries(formData);
     const dietaryRestrictions = formData.getAll("dietaryRestrictions");
-    const favColor = formData.get("favColor");
+    console.log(data);
 
-    // console.log(email, password);
-    // console.log(dietaryRestrictions);
-    console.log(favColor);
+    //my way
+    // const newData = { ...data, dietaryRestrictions: dietaryData };
+    // console.log(newData);
+
+    //better way
+    const allData = { ...data, dietaryRestrictions };
+    console.log(allData);
   }
 
   return (
