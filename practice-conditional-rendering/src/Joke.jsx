@@ -3,7 +3,7 @@ import React from "react";
 export default function Joke(props) {
   const [isShown, setIsShown] = React.useState(false);
 
-  const [unreadMessage, setUnreadMessage] = React.useState(["a", "b"]);
+  //   const [unreadMessage, setUnreadMessage] = React.useState(["a", "b"]);
 
   function toggleShown(prevBtn) {
     setIsShown((prevShown) => !prevShown);
@@ -13,16 +13,18 @@ export default function Joke(props) {
     <>
       <div>
         {props.setup && <h3>{props.setup}</h3>}
-        {isShown && <p>{props.punchline}</p>}
-        <button onClick={toggleShown}>Show punchline</button>
+        {isShown ? <p>{props.punchline}</p> : null}
+        <button onClick={toggleShown}>
+          {isShown ? "Hide" : "Show"} punchline
+        </button>
         <hr />
       </div>
 
-      <div>
+      {/* <div>
         {unreadMessage.length > 0 && (
           <h1>You have {unreadMessage.length} unread messages!</h1>
         )}
-      </div>
+      </div> */}
     </>
   );
 }
