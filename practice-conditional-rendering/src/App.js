@@ -1,5 +1,4 @@
 import "./App.css";
-
 import Joke from "./Joke";
 import jokesData from "./jokesData";
 
