@@ -15,8 +15,8 @@ root.render(
     {/* <App2 /> */}
     {/* <App3 /> */}
     {/* <App4 /> */}
-    {/* <Card /> */}
+    <Card />
     {/* <Practice /> */}
-    <Counter />
+    {/* <Counter /> */}
   </React.StrictMode>
 );
