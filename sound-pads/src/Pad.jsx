@@ -1,4 +1,12 @@
+import React from "react";
+
 export default function Pad(props) {
-  console.log(props);
-  return <button style={{ backgroundColor: props.color }}></button>;
+  //   const [on, setOn] = React.useState(props.on);
+
+  return (
+    <button
+      style={{ backgroundColor: props.color }}
+      className={props.on ? "on" : undefined}
+    ></button>
+  );
 }
