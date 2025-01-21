@@ -10,8 +10,12 @@ export default function App({ darkMode }) {
     backgroundColor: darkMode ? "#222222" : "#cccccc",
   };
 
+  function toggle() {
+    console.log("clicked!");
+  }
+
   const buttonElements = pads.map((pad) => (
-    <Pad key={pad.id} color={pad.color} on={pad.on} />
+    <Pad toggle={toggle} key={pad.id} color={pad.color} on={pad.on} />
   ));
 
   return (
