@@ -12,13 +12,13 @@ import App7 from "./dataProps/App7";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
+    <App />
     {/* <App2 /> */}
     {/* <App3 /> */}
     {/* <App4 /> */}
     {/* <Card /> */}
     {/* <Practice /> */}
     {/* <Counter /> */}
-    <App7 />
+    {/* <App7 /> */}
   </React.StrictMode>
 );
