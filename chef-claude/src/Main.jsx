@@ -13,7 +13,14 @@ export default function Main() {
   ]);
 
   const [recipe, setRecipe] = React.useState("");
+
   const recipeSection = React.useRef(null);
+
+  React.useEffect(() => {
+    if (recipe !== "" && recipeSection.current !== null) {
+      recipeSection.current.scrollIntoView();
+    }
+  }, [recipe]);
 
   function addIngredient(formData) {
     const newIngredient = formData.get("ingredient");
