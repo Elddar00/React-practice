@@ -1,7 +1,11 @@
 import "./App.css";
+import { useState } from "react";
 import Die from "./Die";
 
 function App() {
+  const [dice, setDice] = useState(generateAllNewDice());
+
+  // generate random number
   // const newDice = [];
 
   //   for (let i = 0; i < 10; i++) {
@@ -14,22 +18,13 @@ function App() {
     return new Array(10).fill(0).map(() => Math.ceil(Math.random() * 6));
   }
 
-  console.log(generateAllNewDice());
+  // console.log(generateAllNewDice());
+
+  const diceElements = dice.map((num) => <Die value={num} />);
 
   return (
     <main>
-      <div className="dice-container">
-        <Die value={1} />
-        <Die value={2} />
-        <Die value={3} />
-        <Die value={4} />
-        <Die value={5} />
-        <Die value={6} />
-        <Die value={1} />
-        <Die value={1} />
-        <Die value={1} />
-        <Die value={1} />
-      </div>
+      <div className="dice-container">{diceElements}</div>
     </main>
   );
 }
