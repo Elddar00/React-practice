@@ -1,19 +1,28 @@
+import { useState } from "react";
 import "./App.css";
 import { languages } from "./languages";
-console.log(languages);
+// console.log(languages);
 
 export default function AssemblyEndgame() {
+  const [currentWord, setCurrentWord] = useState("react");
+
   const langugeElements = languages.map((lang) => {
     const styles = {
       backgroundColor: lang.backgroundColor,
       color: lang.color,
     };
+
     return (
       <span className="chip" style={styles} key={lang.name}>
         {lang.name}
       </span>
     );
   });
+
+  const letterElements = currentWord
+    .split("")
+    .map((letter, index) => <span key={index}>{letter.toUpperCase()}</span>);
+
   return (
     <main>
       <header>
@@ -28,6 +37,7 @@ export default function AssemblyEndgame() {
         <p>Well done! 🎊</p>
       </section>
       <section className="language-chips">{langugeElements}</section>
+      <section className="word">{letterElements}</section>
     </main>
   );
 }
