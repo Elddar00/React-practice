@@ -7,7 +7,11 @@ import clsx from "clsx";
 export default function AssemblyEndgame() {
   const [currentWord, setCurrentWord] = useState("react");
   const [guessedLetters, setGuessedLetters] = useState([]);
-  // console.log(guessedLetters);
+  // console.log(guessedLetters);\
+
+  const wrongGuessCount = guessedLetters.filter(
+    (letter) => !currentWord.includes(letter)
+  ).length;
 
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
