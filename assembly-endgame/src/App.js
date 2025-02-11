@@ -13,6 +13,8 @@ export default function AssemblyEndgame() {
     (letter) => !currentWord.includes(letter)
   ).length;
 
+  console.log(wrongGuessCount);
+
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
   // first way
@@ -30,14 +32,15 @@ export default function AssemblyEndgame() {
     );
   }
 
-  const langugeElements = languages.map((lang) => {
+  const langugeElements = languages.map((lang, index) => {
+    const isLanguageLost = index < wrongGuessCount;
     const styles = {
       backgroundColor: lang.backgroundColor,
       color: lang.color,
     };
-
+    const className = clsx("chip", isLanguageLost && "lost");
     return (
-      <span className="chip" style={styles} key={lang.name}>
+      <span className={className} style={styles} key={lang.name}>
         {lang.name}
       </span>
     );
