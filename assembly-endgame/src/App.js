@@ -13,6 +13,16 @@ export default function AssemblyEndgame() {
     (letter) => !currentWord.includes(letter)
   ).length;
 
+  const isGameWon = currentWord
+    .split("")
+    .every((letter) => guessedLetters.includes(letter));
+
+  const isGameLose = wrongGuessCount >= languages.length - 1;
+
+  const isGameOver = isGameWon || isGameLose;
+
+  console.log(isGameOver);
+
   console.log(wrongGuessCount);
 
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -93,7 +103,7 @@ export default function AssemblyEndgame() {
       <section className="language-chips">{langugeElements}</section>
       <section className="word">{letterElements}</section>
       <section className="keyboard">{keyboardElements}</section>
-      <button className="new-game">New Game</button>
+      {isGameOver && <button className="new-game">New Game</button>}
     </main>
   );
 }
