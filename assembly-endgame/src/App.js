@@ -106,7 +106,7 @@ export default function AssemblyEndgame() {
           ) : (
             <>
               <h2>Game over!</h2>
-              <p>You lose !</p>
+              <p>You lose ! Better start learning Assembly !</p>
             </>
           )
         ) : null}
