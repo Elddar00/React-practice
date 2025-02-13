@@ -4,6 +4,16 @@ import { languages } from "./languages";
 import clsx from "clsx";
 // console.log(languages);
 
+/**
+ * Backlog:
+ *
+ * - Farewell messages in status section
+ * - Fix ally issues
+ * - Make new game button work
+ * - Choose a random word from a list of word
+ * - Confetti drop when the user wins
+ */
+
 export default function AssemblyEndgame() {
   const [currentWord, setCurrentWord] = useState("react");
   const [guessedLetters, setGuessedLetters] = useState([]);
