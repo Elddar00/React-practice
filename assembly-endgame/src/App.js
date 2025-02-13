@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import { languages } from "./languages";
 import clsx from "clsx";
-// console.log(languages);
+import { getFarewellText } from "./utils";
 
 /**
  * Backlog:
@@ -28,6 +28,10 @@ export default function AssemblyEndgame() {
     .every((letter) => guessedLetters.includes(letter));
   const isGameLose = wrongGuessCount >= languages.length - 1;
   const isGameOver = isGameWon || isGameLose;
+  const lastGuessedLetter = guessedLetters[guessedLetters.length - 1];
+  const isLastGuessIncorrect =
+    lastGuessedLetter && !currentWord.includes(lastGuessedLetter);
+  console.log(isLastGuessIncorrect);
 
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
@@ -94,11 +98,16 @@ export default function AssemblyEndgame() {
   const gameStatusClass = clsx("game-status", {
     won: isGameWon,
     lost: isGameLose,
+    farewell: !isGameOver && isLastGuessIncorrect,
   });
 
   function renderGameStatus() {
-    if (!isGameOver) {
-      return null;
+    if (!isGameOver && isLastGuessIncorrect) {
+      return (
+        <p className="farewell-message">
+          {getFarewellText(languages[wrongGuessCount - 1].name)}
+        </p>
+      );
     }
 
     if (isGameWon) {
@@ -108,7 +117,8 @@ export default function AssemblyEndgame() {
           <p>Well done! 🎊</p>
         </>
       );
-    } else {
+    }
+    if (isGameLose) {
       return (
         <>
           <h2>Game over!</h2>
@@ -116,6 +126,8 @@ export default function AssemblyEndgame() {
         </>
       );
     }
+
+    return null;
   }
 
   return (
