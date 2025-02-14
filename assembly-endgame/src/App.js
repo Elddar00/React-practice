@@ -28,10 +28,11 @@ export default function AssemblyEndgame() {
     .every((letter) => guessedLetters.includes(letter));
   const isGameLose = wrongGuessCount >= languages.length - 1;
   const isGameOver = isGameWon || isGameLose;
+
   const lastGuessedLetter = guessedLetters[guessedLetters.length - 1];
+
   const isLastGuessIncorrect =
     lastGuessedLetter && !currentWord.includes(lastGuessedLetter);
-  console.log(isLastGuessIncorrect);
 
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
@@ -88,6 +89,7 @@ export default function AssemblyEndgame() {
       <button
         className={className}
         key={letter}
+        disabled={isGameOver}
         onClick={() => addGuessedLetter(letter)}
       >
         {letter.toUpperCase()}
