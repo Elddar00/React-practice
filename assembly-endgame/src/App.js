@@ -2,20 +2,16 @@ import { useState } from "react";
 import "./App.css";
 import { languages } from "./languages";
 import clsx from "clsx";
-import { getFarewellText } from "./utils";
+import { getFarewellText, getRandomWord } from "./utils";
 
 /**
  * Backlog:
  *
- * - Farewell messages in status section
- * - Fix ally issues
- * - Make new game button work
- * - Choose a random word from a list of word
  * - Confetti drop when the user wins
  */
 
 export default function AssemblyEndgame() {
-  const [currentWord, setCurrentWord] = useState("react");
+  const [currentWord, setCurrentWord] = useState(() => getRandomWord());
   const [guessedLetters, setGuessedLetters] = useState([]);
   // console.log(guessedLetters);\
 
