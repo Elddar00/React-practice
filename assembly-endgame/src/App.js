@@ -19,6 +19,7 @@ export default function AssemblyEndgame() {
   const [guessedLetters, setGuessedLetters] = useState([]);
   // console.log(guessedLetters);\
 
+  const numGuessesLeft = languages.length - 1;
   const wrongGuessCount = guessedLetters.filter(
     (letter) => !currentWord.includes(letter)
   ).length;
@@ -26,7 +27,7 @@ export default function AssemblyEndgame() {
   const isGameWon = currentWord
     .split("")
     .every((letter) => guessedLetters.includes(letter));
-  const isGameLose = wrongGuessCount >= languages.length - 1;
+  const isGameLose = wrongGuessCount >= numGuessesLeft;
   const isGameOver = isGameWon || isGameLose;
 
   const lastGuessedLetter = guessedLetters[guessedLetters.length - 1];
@@ -141,7 +142,7 @@ export default function AssemblyEndgame() {
           from Assembly!
         </p>
       </header>
-
+      {/*Combined  visually-hidden aria-live region for status updates*/}
       <section aria-live="polite" role="status" className={gameStatusClass}>
         {renderGameStatus()}
       </section>
@@ -149,6 +150,12 @@ export default function AssemblyEndgame() {
       <section className="language-chips">{langugeElements}</section>
       <section className="word">{letterElements}</section>
       <section className="sr-only" aria-live="polite" role="status">
+        <p>
+          {currentWord.includes(lastGuessedLetter)
+            ? `Correct! The letter ${lastGuessedLetter} is in the word`
+            : `Sorry! The letter ${lastGuessedLetter} is not in the word`}
+          You have {numGuessesLeft} attempts left.
+        </p>
         <p>
           Current word:{" "}
           {currentWord
