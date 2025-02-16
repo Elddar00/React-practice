@@ -3,6 +3,7 @@ import "./App.css";
 import { languages } from "./languages";
 import clsx from "clsx";
 import { getFarewellText, getRandomWord } from "./utils";
+import Confetti from "react-confetti";
 
 /**
  * Backlog:
@@ -140,6 +141,7 @@ export default function AssemblyEndgame() {
 
   return (
     <main>
+      {isGameWon && <Confetti recycle={false} numberOfPieces={1000} />}
       <header>
         <h1>Assembly: Endgame</h1>
         <p>
