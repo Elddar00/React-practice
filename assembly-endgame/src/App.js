@@ -23,8 +23,8 @@ export default function AssemblyEndgame() {
   const isGameWon = currentWord
     .split("")
     .every((letter) => guessedLetters.includes(letter));
-  const isGameLose = wrongGuessCount >= numGuessesLeft;
-  const isGameOver = isGameWon || isGameLose;
+  const isGameLost = wrongGuessCount >= numGuessesLeft;
+  const isGameOver = isGameWon || isGameLost;
 
   const lastGuessedLetter = guessedLetters[guessedLetters.length - 1];
 
@@ -67,13 +67,17 @@ export default function AssemblyEndgame() {
     );
   });
 
-  const letterElements = currentWord
-    .split("")
-    .map((letter, index) => (
-      <span key={index}>
-        {guessedLetters.includes(letter) ? letter.toUpperCase() : ""}
+  const letterElements = currentWord.split("").map((letter, index) => {
+    const shouldRevealLetter = isGameLost || guessedLetters.includes(letter);
+    const letterClassName = clsx(
+      isGameLost && !guessedLetters.includes(letter) && "missed-letter"
+    );
+    return (
+      <span key={index} className={letterClassName}>
+        {shouldRevealLetter ? letter.toUpperCase() : ""}
       </span>
-    ));
+    );
+  });
 
   const keyboardElements = alphabet.split("").map((letter) => {
     const isGuessed = guessedLetters.includes(letter);
@@ -101,7 +105,7 @@ export default function AssemblyEndgame() {
 
   const gameStatusClass = clsx("game-status", {
     won: isGameWon,
-    lost: isGameLose,
+    lost: isGameLost,
     farewell: !isGameOver && isLastGuessIncorrect,
   });
 
@@ -122,7 +126,7 @@ export default function AssemblyEndgame() {
         </>
       );
     }
-    if (isGameLose) {
+    if (isGameLost) {
       return (
         <>
           <h2>Game over!</h2>
@@ -147,7 +151,6 @@ export default function AssemblyEndgame() {
       <section aria-live="polite" role="status" className={gameStatusClass}>
         {renderGameStatus()}
       </section>
-
       <section className="language-chips">{langugeElements}</section>
       <section className="word">{letterElements}</section>
       <section className="sr-only" aria-live="polite" role="status">
